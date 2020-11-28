@@ -48,8 +48,8 @@ class MyListener implements MessageListener {
         	
          // The credentials added are as ## , and are active , simply execute the jar file.
         	BasicAWSCredentials awsCreds = new BasicAWSCredentials("#####################" , "########################" );
-            Regions clientRegion = Regions.US_EAST_1;
-            String bucketName = "njit-cs-643";
+            Regions clientRegion = Regions.(mention-regionname);
+            String bucketName = 'Bucket-Name';
             
             ListObjectsV2Request req = new ListObjectsV2Request().withBucketName(bucketName);            
             ListObjectsV2Result result;
@@ -113,8 +113,8 @@ public class CloudComputing2Application {
  	
 		BasicAWSCredentials awsCreds = new BasicAWSCredentials("#################" , "##########################3" );
     	
-        Regions clientRegion = Regions.US_EAST_1;
-        String bucketName = "njit-cs-643";
+        Regions clientRegion = Regions.(mention-regionname);
+        String bucketName = 'bucket-name';
         try {
         	
             AmazonSQS sqsClient = AmazonSQSClientBuilder.standard()
