@@ -91,8 +91,8 @@ public class Instance1Application{
  	
         BasicAWSCredentials awsCreds = new BasicAWSCredentials("#################" , "############################" );
 		
-        Regions clientRegion = Regions.US_EAST_1;
-        String bucketName = "njit-cs-643";
+        Regions clientRegion = Regions.(mention region);
+        String bucketName = 'Bucketname';
 
         try {
            AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
