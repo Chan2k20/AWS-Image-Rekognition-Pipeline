@@ -1,7 +1,7 @@
 # AWS-Image-Rekognition-Pipeline
 
 
-To build an image recognition pipeline in AWS, using two EC2 instances, S3, SQS,
+Built an image recognition pipeline in AWS, using two EC2 instances, S3, SQS,
 and Rekognition. The assignment must be done in Java on Amazon Linux VMs. For the rest of the
 description, you should refer to the figure below:
 
