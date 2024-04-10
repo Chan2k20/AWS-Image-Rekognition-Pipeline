@@ -1,26 +1,25 @@
-# AWS-Image-Rekognition-Pipeline
+Project Title: AWS Image Recognition Pipeline
 
+Description/Problem Statement: Developed an image recognition pipeline on AWS using a combination of EC2 instances, S3, SQS, and Rekognition services. The objective was to perform object detection and text recognition on images stored in an S3 bucket, utilizing Java applications running on Amazon Linux VMs.
 
-Built an image recognition pipeline in AWS, using two EC2 instances, S3, SQS,
-and Rekognition. The assignment must be done in Java on Amazon Linux VMs. For the rest of the
-description, you should refer to the figure below:
+Skills Utilized:
+- AWS (EC2, S3, SQS, Rekognition)
+- Java Programming
+- Image Processing
+- Parallel Computing
+- Queue Management
 
+Solution:
+- Utilized two EC2 instances (EC2 A and B) running Amazon Linux AMI to operate in parallel.
+- EC2 A retrieved 10 images from the designated S3 bucket (njit-cs-643) and conducted object detection using Rekognition.
+- Identified images with cars detected with a confidence level exceeding 90%, storing their indexes in SQS.
+- EC2 B continuously monitored SQS for image indexes, downloading images from S3 and performing text recognition using Rekognition.
+- The instances operated independently and concurrently, ensuring efficient processing of image data.
+- Implemented a signaling mechanism using a special index (-1) in the SQS queue to indicate the completion of image processing by EC2 A.
 
+Program Output:
+Upon completion, EC2 B generated an output file, "output.txt," on its associated EBS. This file contained:
+- Indexes of images featuring both cars and text.
+- The corresponding text identified within each image.
 
-Created 2 EC2 instances (EC2 A and B in the figure), with Amazon Linux AMI, that will work
-in parallel. Each instance will run a Java application. Instance A will read 10 images from an S3 bucket that
-we created (njit-cs-643) and perform object detection in the images. When a car is detected using
-Rekognition, with confidence higher than 90%, the index of that image (e.g., 2.jpg) is stored in SQS.
-
-Instance B reads indexes of images from SQS as soon as these indexes become available in the queue, and
-performs text recognition on these images (i.e., downloads them from S3 one by one and uses Rekognition
-for text recognition). 
-
-Note that the two instances work in parallel: for example, instance A is processing
-image 3, while instance B is processing image 1 that was recognized as a car by instance A. When instance
-A terminates its image processing, it adds index -1 to the queue to signal to instance B that no more indexes
-will come. 
-
-Program output: When instance B finishes, it prints to a file output.txt, in its associated EBS,
-the indexes of the images that have both cars and text, and also prints the actual text in each image next to
-its index. Your application must work no matter which instance starts first.
+The application was designed to function seamlessly regardless of which instance initiated processing first.
