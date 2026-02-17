@@ -83,22 +83,6 @@ Configure the following parameters:
 - **Queue Management**: SQS handles asynchronous communication and load distribution
 - **Scalability**: Architecture supports scaling with additional consumer instances
 
-## Future Enhancements
-
-- [ ] Add support for different object types beyond cars
-- [ ] Implement configurable confidence thresholds
-- [ ] Add error handling and retry logic
-- [ ] Create dashboard for monitoring pipeline progress
-- [ ] Optimize Rekognition API calls with batch processing
-- [ ] Add CloudWatch metrics and logging
-
-## License
-
-[Add your license here]
-
-## Author
-
-Chan2k20
 
 ## References
 
